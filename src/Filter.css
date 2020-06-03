@@ -1,0 +1,48 @@
+.App-body {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+/* FILTER STYLES */
+.filter-item {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.filter-item-title {
+  margin-bottom: 0;
+  margin-right: 20px;
+  width: 120px;
+  text-align: right;
+}
+
+.filter-checkbox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ui.button {
+  width: 210px;
+}
+
+label {
+  text-transform: uppercase;
+  color: white !important;
+  margin-right: 30px;
+}
+
+/* RESULT CARD STYLES */
+#results-container {
+  margin-left: 60px;
+}
+
+.extra.content {
+  text-align: right;
+}

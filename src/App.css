@@ -50,6 +50,7 @@
   min-height: 100vh;
   position: absolute;
   z-index: -1;
+  transition: background-image 2s ease-in-out;
 }
 
 @keyframes App-logo-spin {
