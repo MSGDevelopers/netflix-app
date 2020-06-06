@@ -1,24 +1,29 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import Filter from "./Filter";
+import Filter from "./components/Filter";
+import Results from "./components/Results";
 
 function App() {
-  
-  const BACKGROUND = [
+  const background = [
     require("./images/bg1.jpg"),
     require("./images/bg2.jpg"),
     require("./images/bg3.jpg"),
   ];
-  const [currentBackground, setBackground] = useState(BACKGROUND[0]);
+  const [currentBackground, setBackground] = useState(background[0]);
 
   function BackgroundRefresh() {
-    console.log('background refreshing');
-    let currentIndex = BACKGROUND.findIndex(image => image === currentBackground)
-    if (currentBackground === BACKGROUND[currentIndex] && currentIndex < BACKGROUND.length - 1) {
+    console.log("background refreshing");
+    let currentIndex = background.findIndex(
+      (image) => image === currentBackground
+    );
+    if (
+      currentBackground === background[currentIndex] &&
+      currentIndex < background.length - 1
+    ) {
       currentIndex++;
-      setBackground(BACKGROUND[currentIndex]);
+      setBackground(background[currentIndex]);
     } else {
-      setBackground(BACKGROUND[0]);
+      setBackground(background[0]);
     }
   }
 
@@ -31,12 +36,18 @@ function App() {
 
   return (
     <div className="App">
-      <div className="Background" style={{ backgroundImage: "url(" + currentBackground + ")" }}></div>
+      <div
+        className="Background"
+        style={{ backgroundImage: "url(" + currentBackground + ")" }}
+      ></div>
       <header className="App-header">
         <h1 className="title">OnPointFlix</h1>
         <p className="sub-title">What to watch?</p>
       </header>
-      <Filter/>
+      <div className="App-body">
+        <Filter />
+        <Results />
+      </div>
     </div>
   );
 }
