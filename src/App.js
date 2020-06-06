@@ -10,9 +10,9 @@ function App() {
     require("./images/bg3.jpg"),
   ];
   const [currentBackground, setBackground] = useState(background[0]);
+  const [showResults, setShowResults] = useState(false);
 
   function BackgroundRefresh() {
-    console.log("background refreshing");
     let currentIndex = background.findIndex(
       (image) => image === currentBackground
     );
@@ -34,6 +34,11 @@ function App() {
     return () => clearInterval(intervalId);
   });
 
+  function getResults() {
+    console.log('getResults');
+    setShowResults(true);
+  }
+
   return (
     <div className="App">
       <div
@@ -45,8 +50,8 @@ function App() {
         <p className="sub-title">What to watch?</p>
       </header>
       <div className="App-body">
-        <Filter />
-        <Results />
+        <Filter onFilterClick={getResults} />
+        <Results show={showResults} />
       </div>
     </div>
   );

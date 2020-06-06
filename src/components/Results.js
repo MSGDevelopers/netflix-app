@@ -1,12 +1,11 @@
-import React, {useState} from "react";
+import React from "react";
 import "./Results.css";
 import { Card, Icon, Image } from "semantic-ui-react";
 
-function Results() {
-  const [showResults, setShowResults] = useState(false);
+function Results({show}) {
 
   return (
-    <div className={(showResults ? '' : 'hide-card')} id="results-container">
+    <div className={(show ? '' : 'hide-card')} id="results-container">
       <Card>
         <Image
           src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/9ada75bf-aba2-4259-b1ca-16d33469a46f/14.jpg"

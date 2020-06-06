@@ -3,7 +3,7 @@ import moment from "moment";
 import "./Filter.css";
 import { Button, DatePicker, Select, Slider, Checkbox } from "antd";
 
-function Filter() {
+function Filter({onFilterClick}) {
   const movieGenres = [
     {
       label: "Action",
@@ -52,8 +52,9 @@ function Filter() {
   const { Option } = Select;
 
 
-  function getResults() {
-    console.log('Hello, world')
+  function handleClick() {
+    console.log('handleClick');
+    onFilterClick();
   }
 
   return (
@@ -79,7 +80,7 @@ function Filter() {
       <div className="filter-item">
         <h1 className="filter-item-title">Rotten tomatoes</h1>
         <div className="range-item">
-          <Slider range defaultValue={[0, 100]} min={0} max={100}></Slider>
+          <Slider range tooltipVisible defaultValue={[0, 100]} min={0} max={100}></Slider>
         </div>
       </div>
       <div className="filter-item">
@@ -90,7 +91,7 @@ function Filter() {
         </div>
       </div>
       <div className="filter-button">
-        <Button className="submit-button" type="primary" onClick={() => getResults()}>
+        <Button className="submit-button" type="primary" onClick={handleClick}>
           FLIX ME
         </Button>
       </div>

@@ -44,11 +44,7 @@ label {
   margin-right: 30px;
 }
 
-/* RESULT CARD STYLES */
-#results-container {
-  margin-left: 60px;
-}
-
-.extra.content {
-  text-align: right;
+.ant-tooltip {
+  /* Hide slider numbers when dropdown overlays on top */
+  z-index: 0;
 }
