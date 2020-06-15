@@ -1,0 +1,50 @@
+/* FILTER STYLES */
+.filter-item {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.filter-item-title {
+  color: white;
+  margin-bottom: 0;
+  margin-right: 20px;
+  width: 120px;
+  text-align: right;
+}
+
+.filter-checkbox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dropdown-item {
+  width: 224px;
+}
+
+.checkbox-item {
+}
+
+.range-item {
+  width: 224px;
+}
+
+.submit-button {
+  width: 224px;
+}
+
+label {
+  text-transform: uppercase;
+  color: white !important;
+  margin-right: 30px;
+}
+
+.ant-tooltip {
+  /* Hide slider numbers when dropdown overlays on top */
+  z-index: 0;
+}
