@@ -22,7 +22,7 @@ function Results({show}) {
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <a href="https://www.netflix.com" target="_blank">
+          <a href="https://www.netflix.com" target="_blank" rel="noopener noreferrer">
             Play on Netflix <Icon name="play circle" />
           </a>
         </Card.Content>
