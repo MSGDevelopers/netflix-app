@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import moment from "moment";
 import "./Filter.css";
 import { Button, DatePicker, Select, Slider, Checkbox } from "antd";
+
 
 function Filter({onFilterClick}) {
   const movieGenres = [
@@ -49,12 +50,44 @@ function Filter({onFilterClick}) {
 
   const { RangePicker } = DatePicker;
   // dropdown
-  const { Option } = Select;
+  const [genre, setGenre] = useState()
+  const [yearRange, setYearRange] = useState()
+  const [tomatoe, setTomatoe] = useState()
+  const [movie, setMovie] = useState()
+  const [television, setTelevision] = useState()
 
+  function handleGenre(value) {
+    setGenre(value);
+    // console.log(genre)
+  }
+
+  function handleYear(value) {
+    setYearRange(value);
+  }
+
+  function handleTomatoe(value) {
+    setTomatoe(value);
+   
+  }
+
+  function handleMovies(value) {
+    setMovie(value.target.checked);
+    
+  }
+
+  function handleTelevision(value) {
+    setTelevision(value.target.checked);
+   
+  }
 
   function handleClick() {
     console.log('handleClick');
     onFilterClick();
+    console.log(genre)
+    console.log(yearRange)
+    console.log(tomatoe)
+    console.log(movie)
+    console.log(television)
   }
 
   return (
@@ -65,11 +98,13 @@ function Filter({onFilterClick}) {
           className="dropdown-item"
           placeholder="Genre"
           options={movieGenres}
+          onChange={handleGenre}
         ></Select>
       </div>
       <div className="filter-item">
         <h1 className="filter-item-title">Year</h1>
         <RangePicker
+          onChange={handleYear}
           picker="year"
           defaultPickerValue={[
             moment().subtract(20, "years"),
@@ -80,14 +115,21 @@ function Filter({onFilterClick}) {
       <div className="filter-item">
         <h1 className="filter-item-title">Rotten tomatoes</h1>
         <div className="range-item">
-          <Slider range tooltipVisible defaultValue={[0, 100]} min={0} max={100}></Slider>
+          <Slider 
+            range 
+            tooltipVisible 
+            defaultValue={[0, 100]} 
+            min={0} 
+            max={100}
+            onChange={handleTomatoe}
+          ></Slider>
         </div>
       </div>
       <div className="filter-item">
         <h1 className="filter-item-title">Type</h1>
         <div className="checkbox-item">
-          <Checkbox> Movies </Checkbox>
-          <Checkbox> TV Shows </Checkbox>
+          <Checkbox onChange={handleMovies}> Movies </Checkbox>
+          <Checkbox onChange={handleTelevision}> TV Shows </Checkbox>
         </div>
       </div>
       <div className="filter-button">
