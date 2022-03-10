@@ -5,6 +5,7 @@
   flex-direction: column;
 }
 
+// Movie Description Styles
 .flix-results-movie {
   display: flex;
   color: white;
@@ -50,6 +51,16 @@
 
 .flix-results-button {
   margin-top: 32px;
+}
+
+// Modal Styles
+.flix-results-trailer-modal {
+  .ant-modal-content {
+    background: none;
+  }
+  .ant-modal-body {
+    padding: 0;
+  }
 }
 
 // Scrollbar Styles

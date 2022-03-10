@@ -1,17 +1,20 @@
-import { Button, Card } from 'antd';
-import {
-  EllipsisOutlined,
-  PlayCircleOutlined,
-  YoutubeOutlined
-} from '@ant-design/icons';
+import { Button, Modal } from 'antd';
+import { PlayCircleOutlined, YoutubeOutlined } from '@ant-design/icons';
 import './Results.scss';
-import Meta from 'antd/lib/card/Meta';
+import { useState } from 'react';
 
 interface Props {
-  onButtonClick: () => void;
+  onBackButtonClick: () => void;
 }
 
-const Results = ({ onButtonClick }: Props) => {
+const Results = ({ onBackButtonClick }: Props) => {
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const openNetflixNewTab = (url: string) => {
+    var win = window.open(url, '_blank');
+    win?.focus();
+  };
+
   return (
     <div className="flix-results">
       <section className="flix-results-movie">
@@ -43,10 +46,14 @@ const Results = ({ onButtonClick }: Props) => {
             </div>
           </div>
           <div className="flix-results-movie-content-actions">
-            <Button onClick={onButtonClick}>
+            <Button onClick={() => setModalVisible(true)}>
               Watch Trailer <YoutubeOutlined />
             </Button>
-            <Button type="primary" danger onClick={onButtonClick}>
+            <Button
+              type="primary"
+              danger
+              onClick={() => openNetflixNewTab('https://www.netflix.com')}
+            >
               Play on Netflix <PlayCircleOutlined />
             </Button>
           </div>
@@ -56,10 +63,29 @@ const Results = ({ onButtonClick }: Props) => {
         className="flix-results-button"
         ghost
         size="large"
-        onClick={onButtonClick}
+        onClick={onBackButtonClick}
       >
         Back
       </Button>
+      <Modal
+        className="flix-results-trailer-modal"
+        centered
+        width={640}
+        visible={modalVisible}
+        closable={false}
+        footer={null}
+        onCancel={() => setModalVisible(false)}
+      >
+        <iframe
+          width="640"
+          height="395"
+          src="https://www.youtube.com/embed/EnlOhdFZSXw"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </Modal>
     </div>
   );
 };

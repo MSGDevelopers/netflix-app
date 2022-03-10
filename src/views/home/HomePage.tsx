@@ -57,7 +57,7 @@ const HomePage = () => {
           <MovieFilter onFilterClick={() => displayResults()}></MovieFilter>
         )}
         {showResults && !loading && (
-          <Results onButtonClick={() => resetResults()}></Results>
+          <Results onBackButtonClick={() => resetResults()}></Results>
         )}
         {loading && (
           <Spin className="flix-spinner" tip="Grab your popcorn..."></Spin>
