@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './HomePage.scss';
 import { backgroundImages } from '../../utils/constants';
+import MovieFilter from './MovieFilter';
 
 const HomePage = () => {
   // State variable + function that is built-in from React (We declare our bgImage variable here)
   const [bgImage, setBgImage] = useState(backgroundImages[0]);
+  const [showResults, setShowResults] = useState(false);
 
   // This function changes the background image
   const changeBackground = () => {
@@ -16,6 +18,10 @@ const HomePage = () => {
         imageIndex === backgroundImages.length - 1 ? 0 : (imageIndex += 1);
       setBgImage(backgroundImages[imageIndex]);
     }, duration);
+  };
+
+  const displayResults = () => {
+    setShowResults(true);
   };
 
   // Initial function that will run only once (kicks off the background change)
@@ -31,8 +37,11 @@ const HomePage = () => {
       <section className="flix-content">
         <header className="flix-header">
           <h1 className="title">OnPointFlix</h1>
-          <p className="sub-title">What to watch?</p>
+          <p className="sub-title">
+            {showResults ? 'Watch this now!' : 'What to watch?'}
+          </p>
         </header>
+        <MovieFilter onFilterClick={() => displayResults()}></MovieFilter>
       </section>
     </div>
   );
