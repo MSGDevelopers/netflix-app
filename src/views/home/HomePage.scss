@@ -1,11 +1,15 @@
 .flix-background {
   height: 100%;
-  background-size: auto 100%;
+  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   -webkit-transition: background 1s;
   -moz-transition: background 1s;
   -o-transition: background 1s;
   transition: background 1s;
+  overflow: auto;
+  scrollbar-gutter: stable;
 }
 
 .flix-content {
@@ -22,7 +26,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  padding-top: 60px;
+  padding-top: 32px;
   padding-bottom: 20px;
   .title {
     color: white;
@@ -38,4 +42,9 @@
     font-size: 40px;
     margin: 0;
   }
+}
+
+.flix-spinner {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 32px !important;
 }
