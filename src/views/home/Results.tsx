@@ -1,3 +1,4 @@
+import { Button } from 'antd';
 import './Results.scss';
 
 interface Props {
@@ -6,8 +7,15 @@ interface Props {
 
 const Results = ({ onButtonClick }: Props) => {
   return (
-    <div>
-      <button onClick={onButtonClick}>Back</button>
+    <div className="flix-results">
+      <Button
+        className="flix-results-button"
+        ghost
+        size="large"
+        onClick={onButtonClick}
+      >
+        Back
+      </Button>
     </div>
   );
 };
