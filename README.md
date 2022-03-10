@@ -8,7 +8,7 @@
 
 - Built with [React v17](https://reactjs.org/docs/create-a-new-react-app.html)
 - Routing provided by [React Router](https://reactrouter.com/)
-- Styled with [Semantic-UI React](https://react.semantic-ui.com/)
+- Styled with [Ant Design](https://ant.design/)
 - Hosted on [Netlify](https://app.netlify.com/)
 - Code formatted by [Prettier](https://prettier.io/)
 
