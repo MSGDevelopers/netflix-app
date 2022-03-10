@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './HomePage.scss';
 import { backgroundImages } from '../../utils/constants';
 import MovieFilter from './MovieFilter';
+import Results from './Results';
 
 const HomePage = () => {
   // State variable + function that is built-in from React (We declare our bgImage variable here)
@@ -24,6 +25,10 @@ const HomePage = () => {
     setShowResults(true);
   };
 
+  const resetResults = () => {
+    setShowResults(false);
+  };
+
   // Initial function that will run only once (kicks off the background change)
   useEffect(() => {
     changeBackground();
@@ -41,7 +46,11 @@ const HomePage = () => {
             {showResults ? 'Watch this now!' : 'What to watch?'}
           </p>
         </header>
-        <MovieFilter onFilterClick={() => displayResults()}></MovieFilter>
+        {!showResults ? (
+          <MovieFilter onFilterClick={() => displayResults()}></MovieFilter>
+        ) : (
+          <Results onButtonClick={() => resetResults()}></Results>
+        )}
       </section>
     </div>
   );
