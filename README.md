@@ -1,68 +1,94 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# OnPointFlix
 
-## Available Scripts
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0a51d0e9-f611-4dd8-887f-fc1889e68540/deploy-status)](https://app.netlify.com/sites/onpointflix/deploys)
 
-In the project directory, you can run:
+[OnPointFlix.com](https://onpointflix.com/) is a React web app built to help find you the best movies to watch on the planet!
 
-### `yarn start`
+## Features
 
-Runs the app in the development mode.<br />
+- Built with [React v17](https://reactjs.org/docs/create-a-new-react-app.html)
+- Routing provided by [React Router](https://reactrouter.com/)
+- Styled with [Semantic-UI React](https://react.semantic-ui.com/)
+- Hosted on [Netlify](https://app.netlify.com/)
+- Code formatted by [Prettier](https://prettier.io/)
+
+---
+
+## Installation
+
+Prerequisites (Download and Install)
+
+1. [Node.js](https://nodejs.org/en/download/) - This is the local webserver used to build and host your compiled React app - i.e. `localhost:3000`
+2. [Visual Studio Code](https://code.visualstudio.com/) - The IDE/Code Editor you will be using to write your code
+3. [Git](https://git-scm.com/download/win) - Source code version control system - Allows us to collaborate without stepping on eachothers toes
+
+Next, open VSCode and start up a terminal via `Terminal > New Terminal` and change directories until you are in the folder that you would like to develop in - i.e. ` C:/Users/Keeneng/Web Development` (you can name the folder whatever you want)
+
+```sh
+cd C:/Users/*your-user-goes-here*/Web Development
+```
+
+Clone the git repository to your development folder:
+
+```sh
+git clone https://github.com/msgdevteam/onpointflix.git
+```
+
+To install and run the React App:
+
+```sh
+npm install
+npm start
+```
+
+The `npm start` command will Run the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Development
 
-### `yarn test`
+###### Overview:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- The `master` branch contains all the production code (Whatever is in `master` is what you will see on [OnPointFlix.com](https://onpointflix.com/))
+- We will develop using the `dev` branch (we will create our own branches from the `dev` branch) - i.e. `dev` > `keenengs-branch`
 
-### `yarn build`
+###### Git Tips:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Change to the `dev` branch
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```sh
+ git checkout dev
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Create your own branch from dev
 
-### `yarn eject`
+```sh
+ git checkout -b "name-of-branch-goes-here" dev
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Commit your code
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
+ git commit -m "This is your commit message (a brief description of your code changes)" -a
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Push your code
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```sh
+git push --set-upstream origin "name-of-branch-goes-here"
+```
 
-## Learn More
+- Check status of your code
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```sh
+git status
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Check latest local commits
 
-### Code Splitting
+```sh
+git log
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+&nbsp;
+&nbsp;
+&nbsp;
