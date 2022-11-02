@@ -1,0 +1,64 @@
+.flix-movie-filter {
+  width: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 32px;
+}
+
+.flix-movie-filter-form {
+  position: relative;
+  right: 60px;
+}
+
+.flix-movie-filter-form-item {
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.flix-movie-filter-form-item-title {
+  color: white;
+  margin-bottom: 0;
+  margin-right: 20px;
+  width: 120px;
+  text-align: right;
+}
+
+.dropdown-item {
+  width: 224px;
+}
+
+.date-picker {
+  max-width: 224px;
+}
+
+.checkbox-item {
+  &:first-child {
+    margin-right: 10px;
+  }
+}
+
+.range-item {
+  width: 224px;
+}
+
+label {
+  text-transform: uppercase;
+  color: white !important;
+  margin-right: 30px;
+}
+
+.flix-movie-filter-button {
+  width: 150px;
+}
+
+.ant-tooltip {
+  /* Hide slider numbers when dropdown overlays on top */
+  z-index: 0 !important;
+}
