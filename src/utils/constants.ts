@@ -1,48 +1,22 @@
-import bg1 from '../assets/bg1.jpg';
-import bg2 from '../assets/bg2.jpg';
-import bg3 from '../assets/bg3.jpg';
-
-export const backgroundImages = [bg1, bg2, bg3];
-
+// Hardcoded Genres (get list here: https://api.themoviedb.org/3/genre/movie/list?api_key=<API-KEY-HERE>&language=en-US)
 export const movieGenres = [
-  {
-    label: 'Action',
-    value: 'Action'
-  },
-  {
-    label: 'Adventure',
-    value: 'Adventure'
-  },
-  {
-    label: 'Comedy',
-    value: 'Comedy'
-  },
-  {
-    label: 'Documentary',
-    value: 'Documentary'
-  },
-  {
-    label: 'Drama',
-    value: 'Drama'
-  },
-  {
-    label: 'Fantasy',
-    value: 'Fantasy'
-  },
-  {
-    label: 'Horror',
-    value: 'Horror'
-  },
-  {
-    label: 'Musical',
-    value: 'Musical'
-  },
-  {
-    label: 'Romance',
-    value: 'Romance'
-  },
-  {
-    label: 'Sci-fi',
-    value: 'Sci-fi'
-  }
+  { value: 28, label: 'Action' },
+  { value: 12, label: 'Adventure' },
+  { value: 16, label: 'Animation' },
+  { value: 35, label: 'Comedy' },
+  { value: 80, label: 'Crime' },
+  { value: 99, label: 'Documentary' },
+  { value: 18, label: 'Drama' },
+  { value: 10751, label: 'Family' },
+  { value: 14, label: 'Fantasy' },
+  { value: 36, label: 'History' },
+  { value: 27, label: 'Horror' },
+  { value: 10402, label: 'Music' },
+  { value: 9648, label: 'Mystery' },
+  { value: 10749, label: 'Romance' },
+  { value: 878, label: 'Science Fiction' },
+  { value: 10770, label: 'TV Movie' },
+  { value: 53, label: 'Thriller' },
+  { value: 10752, label: 'War' },
+  { value: 37, label: 'Western' }
 ];

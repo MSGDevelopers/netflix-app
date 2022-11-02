@@ -1,11 +1,11 @@
 import { Button, Checkbox, DatePicker, Select, Slider } from 'antd';
 import moment from 'moment';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { movieGenres } from '../../utils/constants';
 import './MovieFilter.scss';
 
 interface Props {
-  onFilterClick: () => void;
+  onFilterClick: any;
 }
 
 const MovieFilter = ({ onFilterClick }: Props) => {
@@ -14,10 +14,10 @@ const MovieFilter = ({ onFilterClick }: Props) => {
   // dropdown
   const [genre, setGenre] = useState();
   const [yearRange, setYearRange] = useState();
-  const [tomatoe, setTomatoe] = useState();
-  const [movie, setMovie] = useState();
-  const [television, setTelevision] = useState();
+  const [tomatoe, setTomatoe] = useState([0, 10]);
+  const [filters, setFilters] = useState({});
 
+  // dropdowns
   const handleGenre = (value: any) => {
     setGenre(value);
   };
@@ -30,13 +30,14 @@ const MovieFilter = ({ onFilterClick }: Props) => {
     setTomatoe(value);
   };
 
-  const handleMovies = (value: any) => {
-    setMovie(value.target.checked);
-  };
-
-  const handleTelevision = (value: any) => {
-    setTelevision(value.target.checked);
-  };
+  useEffect(() => {
+    let filterSet = {
+      genre: genre,
+      yearRange: yearRange,
+      tomatoe: tomatoe
+    };
+    setFilters(filterSet);
+  }, [genre, yearRange, tomatoe]);
 
   return (
     <div className="flix-movie-filter">
@@ -68,18 +69,11 @@ const MovieFilter = ({ onFilterClick }: Props) => {
             <Slider
               range
               tooltipVisible
-              defaultValue={[0, 100]}
+              defaultValue={[0, 10]}
               min={0}
-              max={100}
+              max={10}
               onChange={handleTomatoe}
             ></Slider>
-          </div>
-        </div>
-        <div className="flix-movie-filter-form-item">
-          <h1 className="flix-movie-filter-form-item-title">Type</h1>
-          <div className="checkbox-item">
-            <Checkbox onChange={handleMovies}> Movies </Checkbox>
-            <Checkbox onChange={handleTelevision}> TV Shows </Checkbox>
           </div>
         </div>
       </div>
@@ -87,7 +81,7 @@ const MovieFilter = ({ onFilterClick }: Props) => {
         className="flix-movie-filter-button"
         size="large"
         type="primary"
-        onClick={onFilterClick}
+        onClick={() => onFilterClick(filters)}
       >
         Flix Me
       </Button>

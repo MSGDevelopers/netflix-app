@@ -1,13 +1,14 @@
-import { Button, Modal } from 'antd';
+import { Button, Modal, Rate } from 'antd';
 import { PlayCircleOutlined, YoutubeOutlined } from '@ant-design/icons';
 import './Results.scss';
 import { useState } from 'react';
 
 interface Props {
+  movie: any;
   onBackButtonClick: () => void;
 }
 
-const Results = ({ onBackButtonClick }: Props) => {
+const Results = ({ movie, onBackButtonClick }: Props) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   const openNetflixNewTab = (url: string) => {
@@ -21,31 +22,25 @@ const Results = ({ onBackButtonClick }: Props) => {
         <img
           className="flix-results-movie-image"
           alt="example"
-          src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/9ada75bf-aba2-4259-b1ca-16d33469a46f/14.jpg"
+          src={movie.poster_path}
         />
         <div className="flix-results-movie-content">
           <div className="flix-results-movie-content-details">
             <h2 className="flix-results-movie-content-details-title">
-              Star Wars: Return of the Jedi
+              {movie.original_title}
             </h2>
             <div className="flix-results-movie-content-details-description">
-              When the menace known as the Joker wreaks havoc and chaos on the
-              people of Gotham, Batman must accept one of the greatest
-              psychological and physical tests of his ability to fight
-              injustice. When the menace known as the Joker wreaks havoc and
-              chaos on the people of Gotham, Batman must accept one of the
-              greatest psychological and physical tests of his ability to fight
-              injustice.
+              {movie.overview}
             </div>
-            <div className="flix-results-movie-content-details-director">
+            {/* <div className="flix-results-movie-content-details-director">
               Director: Christopher Nolan
             </div>
             <div className="flix-results-movie-content-details-cast">
               Cast: Mark Hamill, John Travolta, Frodo Baggins, Han Solo,
               Chewbacca, R2D2, C3PO, Anakin
-            </div>
+            </div> */}
           </div>
-          <div className="flix-results-movie-content-actions">
+          {/* <div className="flix-results-movie-content-actions">
             <Button onClick={() => setModalVisible(true)}>
               Watch Trailer <YoutubeOutlined />
             </Button>
@@ -56,6 +51,9 @@ const Results = ({ onBackButtonClick }: Props) => {
             >
               Play on Netflix <PlayCircleOutlined />
             </Button>
+          </div> */}
+          <div className="flix-results-movie-content-rating">
+            <Rate allowHalf defaultValue={movie.vote_average / 2} />
           </div>
         </div>
       </section>
@@ -67,7 +65,7 @@ const Results = ({ onBackButtonClick }: Props) => {
       >
         Back
       </Button>
-      <Modal
+      {/* <Modal
         className="flix-results-trailer-modal"
         centered
         width={640}
@@ -85,7 +83,7 @@ const Results = ({ onBackButtonClick }: Props) => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
-      </Modal>
+      </Modal> */}
     </div>
   );
 };
