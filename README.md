@@ -11,6 +11,7 @@
 - Styled with [Ant Design](https://ant.design/)
 - Hosted on [Netlify](https://app.netlify.com/)
 - Code formatted by [Prettier](https://prettier.io/)
+- API provided by [The Movie Database API](https://developers.themoviedb.org/3/getting-started)
 
 ---
 
